@@ -6,8 +6,8 @@ import org.springframework.context.ApplicationEvent
 
 class CurrencyConversionEvent(
     source: Any,
-    val conversion: CurrencyConversion,
-    val message: String? = ""
+    val message: String? = "",
+    val conversion: CurrencyConversion
 ) : ApplicationEvent(source) {
 }
 

@@ -17,11 +17,11 @@ class CurrencyConversionService {
     fun convertFromTo(base: String, code: String, amount: Double): CurrencyConversion {
 
         val baseRate = if (base.uppercase() != CurrencyExchange.BASE_CODE) {
-            repository.findByDateAndCode(Date(), base)?.rate ?: 1.0
+            repository.findByDateAndCode(Date(), base)?.rate
         } else 1.0
 
         val codeRate = if (code.uppercase() != CurrencyExchange.BASE_CODE) {
-            repository.findByDateAndCode(Date(), code)?.rate ?: 0.0
+            repository.findByDateAndCode(Date(), code)?.rate
         } else 1.0
 
         return CurrencyConversion(base, code, amount, amount * (codeRate / baseRate))

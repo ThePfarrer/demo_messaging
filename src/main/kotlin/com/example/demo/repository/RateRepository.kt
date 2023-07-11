@@ -6,5 +6,5 @@ import java.util.*
 
 interface RateRepository : CrudRepository<Rate, String> {
     fun findByDate(date: Date): List<Rate>
-    fun findByDateAndCode(date: Date, code: String): Rate?
+    fun findByDateAndCode(date: Date, code: String): Rate
 }
